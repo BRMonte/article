@@ -23,6 +23,8 @@ gem 'rspec-rails'
 
 gem 'factory_bot_rails'
 
+gem 'active_model_serializers'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

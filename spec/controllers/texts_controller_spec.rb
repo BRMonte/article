@@ -8,6 +8,7 @@ describe TextsController do
     end
 
     it 'should return proper json' do
+      create_list :text, 2
       get :index
       json = JSON.parse(response.body)
       pp json
