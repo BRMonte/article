@@ -15,7 +15,7 @@ RSpec.describe Text, type: :model do
     end
 
     it 'should validate the presence of a content' do
-      text = build :text, content: ''
+      text = build :text, content: '' #content empty
       expect(text).not_to be_valid
       expect(text.errors.messages[:content]).to include("can't be blank")
     end
