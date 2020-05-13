@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
-  resources :texts
+  get 'texts/index'
+  resources :texts, only: [:index]
 
 
 end
