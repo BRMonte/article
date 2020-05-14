@@ -11,9 +11,20 @@ describe TextsController do
       create_list :text, 2
       get :index
       json = JSON.parse(response.body)
-      pp json
-      # json_data = json[:data]
-      # expect(json_data.length).to eq(2)
+      json_data = json['data']
+      expect(json_data.length).to eq(2)
+      expect(json_data[0]['attributes']).to eq({
+        "title" => "My awesome text 1",
+        "content" => "My awesome text's content 1",
+        "slug" => "my-text-1"
+      })
+
+      expect(json_data[1]['attributes']).to eq({
+        "title" => "My awesome text 2",
+        "content" => "My awesome text's content 2",
+        "slug" => "my-text-2"
+      })
+
     end
   end
 end
